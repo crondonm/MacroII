@@ -23,14 +23,14 @@ ystar=kstar^alpha;
 
 %% Creating a grid for capital 
 
-kmin=0.25*kstar;
-kmax=1.75*kstar;
+kmin=0.25*kstar; % minimum value of capital
+kmax=1.75*kstar; % maximum value of capital
 stepsize=(kmax-kmin)/(n-1);
+kmat=kmin:stepsize:kmax; % grid for capital
 
-% kmat = linspace(kmin,kmax,n); // Matlab code
+% kmat = linspace(kmin,kmax,n); % Matlab code
 
-kmat=kmin:stepsize:kmax;
-kmat=kmat';
+kmat=kmat'; % Column vector for capital n x 1
 
 %% Value function iteration
 
@@ -61,8 +61,8 @@ end
  
 for i = 1:n
    
-    polfun(i,1) = kmat(i,1)^(alpha) - k11(i,1) + (1-delta)*kmat(i,1);
-    polfun(i,2) = k11(i,1);
+    polfun(i,1) = kmat(i,1)^(alpha) - k11(i,1) + (1-delta)*kmat(i,1); % Consumption
+    polfun(i,2) = k11(i,1); % K_{t+1}
     
 end
 
