@@ -1,5 +1,7 @@
 function val=valfun(k)
 
+% Test 
+
 % This program gets the value function for a neoclassical growth model with
 % no uncertainty and CRRA utility
 
